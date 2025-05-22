@@ -2,28 +2,31 @@ package com.flamenkito.bpmn
 
 import com.flamenkito.bpmn.ast.*
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import java.io.File
+import java.nio.file.Files
+import java.nio.file.StandardCopyOption
 
 class BpmnParserTest {
     private val parser = BpmnParser()
-    private lateinit var bpmnFile: File
-
-    @BeforeEach
-    fun setUp() {
-        val resource = javaClass.getResourceAsStream("/bpmn/user-registration.bpmn")
-            ?: throw IllegalStateException("Test BPMN file not found")
-        bpmnFile = File.createTempFile("test", ".bpmn").apply {
+    
+    private fun loadTestBpmn(resourcePath: String): File {
+        val resource = javaClass.getResourceAsStream(resourcePath)
+            ?: throw IllegalStateException("Test BPMN file not found: $resourcePath")
+            
+        return Files.createTempFile("bpmn-test", ".bpmn").toFile().apply {
             deleteOnExit()
-            outputStream().use { out ->
-                resource.use { it.copyTo(out) }
+            resource.use { input ->
+                Files.copy(input, toPath(), StandardCopyOption.REPLACE_EXISTING)
             }
         }
     }
 
     @Test
     fun `should parse user registration process`() {
+        // given
+        val bpmnFile = loadTestBpmn("/bpmn/user-registration.bpmn")
+        
         // when
         val processes = parser.parse(bpmnFile)
 
@@ -40,9 +43,17 @@ class BpmnParserTest {
         assertThat(nodes).hasSize(8)
 
         // verify start event
-        val startEvent = nodes.filterIsInstance<StartEvent>().first()
+        val startEvents = nodes.filterIsInstance<StartEvent>()
+        assertThat(startEvents).hasSize(1)
+        val startEvent = startEvents.first()
         assertThat(startEvent.id).isEqualTo("start_registration")
         assertThat(startEvent.name).isEqualTo("Registration Started")
+
+        // verify end event
+        val endEvents = nodes.filterIsInstance<EndEvent>()
+        assertThat(endEvents).hasSize(1)
+        val endEvent = endEvents.first()
+        assertThat(endEvent.id).isEqualTo("registration_completed")
 
         // verify user tasks
         val userTasks = nodes.filterIsInstance<Task>()
