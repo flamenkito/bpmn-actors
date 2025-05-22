@@ -1,0 +1,97 @@
+[ {
+  "id" : "user_registration_process",
+  "name" : "User Registration Process",
+  "elements" : [ {
+    "id" : "start_registration",
+    "name" : "Registration Started"
+  }, {
+    "id" : "fill_registration_form",
+    "name" : "Fill Registration Form",
+    "type" : "USER_TASK"
+  }, {
+    "id" : "validate_user_data",
+    "name" : "Validate User Data",
+    "type" : "SERVICE_TASK"
+  }, {
+    "id" : "check_validation",
+    "name" : "Is Data Valid?",
+    "type" : "EXCLUSIVE"
+  }, {
+    "id" : "send_verification_email",
+    "name" : "Send Verification Email",
+    "type" : "SERVICE_TASK"
+  }, {
+    "id" : "verify_email",
+    "name" : "Wait for Email Verification",
+    "type" : "USER_TASK"
+  }, {
+    "id" : "create_user_account",
+    "name" : "Create User Account",
+    "type" : "SERVICE_TASK"
+  }, {
+    "id" : "send_welcome_email",
+    "name" : "Send Welcome Email",
+    "type" : "SERVICE_TASK"
+  }, {
+    "id" : "registration_completed",
+    "name" : "Registration Completed"
+  }, {
+    "id" : "registration_failed",
+    "name" : "Registration Failed"
+  } ],
+  "sequenceFlows" : [ {
+    "id" : "flow_to_fill_form",
+    "name" : null,
+    "sourceRef" : "start_registration",
+    "targetRef" : "fill_registration_form",
+    "condition" : null
+  }, {
+    "id" : "flow_to_validate",
+    "name" : null,
+    "sourceRef" : "fill_registration_form",
+    "targetRef" : "validate_user_data",
+    "condition" : null
+  }, {
+    "id" : "flow_to_check_validation",
+    "name" : null,
+    "sourceRef" : "validate_user_data",
+    "targetRef" : "check_validation",
+    "condition" : null
+  }, {
+    "id" : "flow_valid_data",
+    "name" : "Valid",
+    "sourceRef" : "check_validation",
+    "targetRef" : "send_verification_email",
+    "condition" : "${isValid == true}"
+  }, {
+    "id" : "flow_invalid_data",
+    "name" : "Invalid",
+    "sourceRef" : "check_validation",
+    "targetRef" : "registration_failed",
+    "condition" : "${isValid == false}"
+  }, {
+    "id" : "flow_to_wait_verification",
+    "name" : null,
+    "sourceRef" : "send_verification_email",
+    "targetRef" : "verify_email",
+    "condition" : null
+  }, {
+    "id" : "flow_to_create_account",
+    "name" : null,
+    "sourceRef" : "verify_email",
+    "targetRef" : "create_user_account",
+    "condition" : null
+  }, {
+    "id" : "flow_to_notification",
+    "name" : null,
+    "sourceRef" : "create_user_account",
+    "targetRef" : "send_welcome_email",
+    "condition" : null
+  }, {
+    "id" : "flow_to_end",
+    "name" : null,
+    "sourceRef" : "send_welcome_email",
+    "targetRef" : "registration_completed",
+    "condition" : null
+  } ]
+} ]
