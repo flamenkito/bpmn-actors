@@ -36,7 +36,7 @@ class BpmnParserTest {
         assertThat(process.name).isEqualTo("User Registration Process")
 
         // verify flow structure
-        assertThat(process.elements).hasSize(8) // all tasks, events and gateways
+        assertThat(process.elements).hasSize(10) // all tasks, events and gateways
         assertThat(process.sequenceFlows).hasSize(9) // all connections
 
         // verify start event
