@@ -79,4 +79,19 @@ class BpmnParserTest {
             "flow_invalid_data"
         )
     }
+
+    @Test
+    fun `should generate valid AST JSON file for user registration BPMN`() {
+        // when
+        parser.parseAndWriteJson(bpmnFile)
+        val jsonFile = File(bpmnFile.parentFile, bpmnFile.nameWithoutExtension + ".json")
+
+        // output JSON to console
+        println(jsonFile.readText())
+
+        // then
+        assertThat(jsonFile.exists()).isTrue()
+        assertThat(jsonFile.readText()).contains("user_registration_process")
+        assertThat(jsonFile.readText()).contains("Registration Started")
+    }
 }

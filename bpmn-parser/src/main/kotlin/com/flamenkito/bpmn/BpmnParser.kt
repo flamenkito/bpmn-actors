@@ -13,6 +13,7 @@ import org.camunda.bpm.model.bpmn.Bpmn
 import org.camunda.bpm.model.bpmn.instance.*
 import java.io.File
 import java.io.InputStream
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 
 class BpmnParser {
     fun parse(file: File): List<BpmnProcess> = parse(file.inputStream())
@@ -99,5 +100,12 @@ class BpmnParser {
                     condition = flow.conditionExpression?.textContent
                 )
             }
+    }
+
+    fun parseAndWriteJson(inputFile: File) {
+        val ast = parse(inputFile)
+        val json = jacksonObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(ast)
+        val jsonFile = File(inputFile.parentFile, inputFile.nameWithoutExtension + ".json")
+        jsonFile.writeText(json)
     }
 }

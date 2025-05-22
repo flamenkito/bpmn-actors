@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.flamenkito.bpmn.BpmnParserTest" time="0.143" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.flamenkito.bpmn.BpmnParserTest" time="0.385" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/Users/asutov/projects/bpmn-actors/bpmn-parser/target/test-classes:/Users/asutov/projects/bpmn-actors/bpmn-parser/target/classes:/Users/asutov/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.22/kotlin-stdlib-1.9.22.jar:/Users/asutov/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/Users/asutov/.m2/repository/org/camunda/bpm/model/camunda-bpmn-model/7.20.0/camunda-bpmn-model-7.20.0.jar:/Users/asutov/.m2/repository/org/camunda/bpm/model/camunda-xml-model/7.20.0/camunda-xml-model-7.20.0.jar:/Users/asutov/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/Users/asutov/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/Users/asutov/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/asutov/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/Users/asutov/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/asutov/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/Users/asutov/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/Users/asutov/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/Users/asutov/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/asutov/.m2/repository/net/bytebuddy/byte-buddy/1.12.21/byte-buddy-1.12.21.jar:"/>
+    <property name="java.class.path" value="/Users/asutov/projects/bpmn-actors/bpmn-parser/target/test-classes:/Users/asutov/projects/bpmn-actors/bpmn-parser/target/classes:/Users/asutov/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.22/kotlin-stdlib-1.9.22.jar:/Users/asutov/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/Users/asutov/.m2/repository/org/camunda/bpm/model/camunda-bpmn-model/7.20.0/camunda-bpmn-model-7.20.0.jar:/Users/asutov/.m2/repository/org/camunda/bpm/model/camunda-xml-model/7.20.0/camunda-xml-model-7.20.0.jar:/Users/asutov/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/Users/asutov/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/Users/asutov/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/asutov/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/Users/asutov/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/asutov/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/Users/asutov/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/Users/asutov/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/Users/asutov/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/asutov/.m2/repository/net/bytebuddy/byte-buddy/1.12.21/byte-buddy-1.12.21.jar:/Users/asutov/.m2/repository/com/fasterxml/jackson/module/jackson-module-kotlin/2.17.1/jackson-module-kotlin-2.17.1.jar:/Users/asutov/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.1/jackson-databind-2.17.1.jar:/Users/asutov/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.1/jackson-core-2.17.1.jar:/Users/asutov/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.1/jackson-annotations-2.17.1.jar:/Users/asutov/.m2/repository/org/jetbrains/kotlin/kotlin-reflect/1.7.22/kotlin-reflect-1.7.22.jar:"/>
     <property name="java.vm.vendor" value="Azul Systems, Inc."/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="http://www.azul.com/"/>
+    <property name="user.timezone" value="Europe/Zurich"/>
     <property name="os.name" value="Mac OS X"/>
     <property name="java.vm.specification.version" value="21"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/Users/asutov/.sdkman/candidates/java/21.0.6-zulu/zulu-21.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/asutov/projects/bpmn-actors/bpmn-parser/target/surefire/surefirebooter-20250522144507334_3.jar /Users/asutov/projects/bpmn-actors/bpmn-parser/target/surefire 2025-05-22T14-45-07_305-jvmRun1 surefire-20250522144507334_1tmp surefire_0-20250522144507334_2tmp"/>
+    <property name="sun.java.command" value="/Users/asutov/projects/bpmn-actors/bpmn-parser/target/surefire/surefirebooter-20250522145203928_3.jar /Users/asutov/projects/bpmn-actors/bpmn-parser/target/surefire 2025-05-22T14-52-03_896-jvmRun1 surefire-20250522145203928_1tmp surefire_0-20250522145203928_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/Users/asutov/projects/bpmn-actors/bpmn-parser/target/test-classes:/Users/asutov/projects/bpmn-actors/bpmn-parser/target/classes:/Users/asutov/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.22/kotlin-stdlib-1.9.22.jar:/Users/asutov/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/Users/asutov/.m2/repository/org/camunda/bpm/model/camunda-bpmn-model/7.20.0/camunda-bpmn-model-7.20.0.jar:/Users/asutov/.m2/repository/org/camunda/bpm/model/camunda-xml-model/7.20.0/camunda-xml-model-7.20.0.jar:/Users/asutov/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/Users/asutov/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/Users/asutov/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/asutov/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/Users/asutov/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/asutov/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/Users/asutov/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/Users/asutov/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/Users/asutov/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/asutov/.m2/repository/net/bytebuddy/byte-buddy/1.12.21/byte-buddy-1.12.21.jar:"/>
+    <property name="surefire.test.class.path" value="/Users/asutov/projects/bpmn-actors/bpmn-parser/target/test-classes:/Users/asutov/projects/bpmn-actors/bpmn-parser/target/classes:/Users/asutov/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.22/kotlin-stdlib-1.9.22.jar:/Users/asutov/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/Users/asutov/.m2/repository/org/camunda/bpm/model/camunda-bpmn-model/7.20.0/camunda-bpmn-model-7.20.0.jar:/Users/asutov/.m2/repository/org/camunda/bpm/model/camunda-xml-model/7.20.0/camunda-xml-model-7.20.0.jar:/Users/asutov/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/Users/asutov/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/Users/asutov/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/asutov/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/Users/asutov/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/asutov/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/Users/asutov/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/Users/asutov/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/Users/asutov/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/asutov/.m2/repository/net/bytebuddy/byte-buddy/1.12.21/byte-buddy-1.12.21.jar:/Users/asutov/.m2/repository/com/fasterxml/jackson/module/jackson-module-kotlin/2.17.1/jackson-module-kotlin-2.17.1.jar:/Users/asutov/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.1/jackson-databind-2.17.1.jar:/Users/asutov/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.1/jackson-core-2.17.1.jar:/Users/asutov/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.1/jackson-annotations-2.17.1.jar:/Users/asutov/.m2/repository/org/jetbrains/kotlin/kotlin-reflect/1.7.22/kotlin-reflect-1.7.22.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/Users/asutov"/>
     <property name="user.language" value="en"/>
@@ -29,7 +30,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/asutov/projects/bpmn-actors/bpmn-parser/target/surefire/surefirebooter-20250522144507334_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/asutov/projects/bpmn-actors/bpmn-parser/target/surefire/surefirebooter-20250522145203928_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="21.0.6+7-LTS"/>
@@ -58,5 +59,105 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="should parse user registration process correctly" classname="com.flamenkito.bpmn.BpmnParserTest" time="0.137"/>
+  <testcase name="should parse user registration process correctly" classname="com.flamenkito.bpmn.BpmnParserTest" time="0.133"/>
+  <testcase name="should generate valid AST JSON file for user registration BPMN" classname="com.flamenkito.bpmn.BpmnParserTest" time="0.245">
+    <system-out><![CDATA[[ {
+  "id" : "user_registration_process",
+  "name" : "User Registration Process",
+  "elements" : [ {
+    "id" : "start_registration",
+    "name" : "Registration Started"
+  }, {
+    "id" : "fill_registration_form",
+    "name" : "Fill Registration Form",
+    "type" : "USER_TASK"
+  }, {
+    "id" : "validate_user_data",
+    "name" : "Validate User Data",
+    "type" : "SERVICE_TASK"
+  }, {
+    "id" : "check_validation",
+    "name" : "Is Data Valid?",
+    "type" : "EXCLUSIVE"
+  }, {
+    "id" : "send_verification_email",
+    "name" : "Send Verification Email",
+    "type" : "SERVICE_TASK"
+  }, {
+    "id" : "verify_email",
+    "name" : "Wait for Email Verification",
+    "type" : "USER_TASK"
+  }, {
+    "id" : "create_user_account",
+    "name" : "Create User Account",
+    "type" : "SERVICE_TASK"
+  }, {
+    "id" : "send_welcome_email",
+    "name" : "Send Welcome Email",
+    "type" : "SERVICE_TASK"
+  }, {
+    "id" : "registration_completed",
+    "name" : "Registration Completed"
+  }, {
+    "id" : "registration_failed",
+    "name" : "Registration Failed"
+  } ],
+  "sequenceFlows" : [ {
+    "id" : "flow_to_fill_form",
+    "name" : null,
+    "sourceRef" : "start_registration",
+    "targetRef" : "fill_registration_form",
+    "condition" : null
+  }, {
+    "id" : "flow_to_validate",
+    "name" : null,
+    "sourceRef" : "fill_registration_form",
+    "targetRef" : "validate_user_data",
+    "condition" : null
+  }, {
+    "id" : "flow_to_check_validation",
+    "name" : null,
+    "sourceRef" : "validate_user_data",
+    "targetRef" : "check_validation",
+    "condition" : null
+  }, {
+    "id" : "flow_valid_data",
+    "name" : "Valid",
+    "sourceRef" : "check_validation",
+    "targetRef" : "send_verification_email",
+    "condition" : "${isValid == true}"
+  }, {
+    "id" : "flow_invalid_data",
+    "name" : "Invalid",
+    "sourceRef" : "check_validation",
+    "targetRef" : "registration_failed",
+    "condition" : "${isValid == false}"
+  }, {
+    "id" : "flow_to_wait_verification",
+    "name" : null,
+    "sourceRef" : "send_verification_email",
+    "targetRef" : "verify_email",
+    "condition" : null
+  }, {
+    "id" : "flow_to_create_account",
+    "name" : null,
+    "sourceRef" : "verify_email",
+    "targetRef" : "create_user_account",
+    "condition" : null
+  }, {
+    "id" : "flow_to_notification",
+    "name" : null,
+    "sourceRef" : "create_user_account",
+    "targetRef" : "send_welcome_email",
+    "condition" : null
+  }, {
+    "id" : "flow_to_end",
+    "name" : null,
+    "sourceRef" : "send_welcome_email",
+    "targetRef" : "registration_completed",
+    "condition" : null
+  } ]
+} ]
+]]></system-out>
+  </testcase>
 </testsuite>
