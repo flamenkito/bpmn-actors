@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:camunda="http://camunda.org/schema/1.0/bpmn"
+                  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                  xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                  id="UserRegistration"
+                  targetNamespace="http://bpmn.io/schema/bpmn">
+  <bpmn:process id="user_registration_process" name="User Registration Process" isExecutable="true">
+    <bpmn:startEvent id="start_registration" name="Registration Started">
+      <bpmn:outgoing>flow_to_fill_form</bpmn:outgoing>
+    </bpmn:startEvent>
+
+    <bpmn:userTask id="fill_registration_form" name="Fill Registration Form">
+      <bpmn:incoming>flow_to_fill_form</bpmn:incoming>
+      <bpmn:outgoing>flow_to_validate</bpmn:outgoing>
+    </bpmn:userTask>
+
+    <bpmn:serviceTask id="validate_user_data" name="Validate User Data">
+      <bpmn:incoming>flow_to_validate</bpmn:incoming>
+      <bpmn:outgoing>flow_to_check_validation</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:exclusiveGateway id="check_validation" name="Is Data Valid?">
+      <bpmn:incoming>flow_to_check_validation</bpmn:incoming>
+      <bpmn:outgoing>flow_valid_data</bpmn:outgoing>
+      <bpmn:outgoing>flow_invalid_data</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+
+    <bpmn:serviceTask id="send_verification_email" name="Send Verification Email">
+      <bpmn:incoming>flow_valid_data</bpmn:incoming>
+      <bpmn:outgoing>flow_to_wait_verification</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:userTask id="verify_email" name="Wait for Email Verification">
+      <bpmn:incoming>flow_to_wait_verification</bpmn:incoming>
+      <bpmn:outgoing>flow_to_create_account</bpmn:outgoing>
+    </bpmn:userTask>
+
+    <bpmn:serviceTask id="create_user_account" name="Create User Account">
+      <bpmn:incoming>flow_to_create_account</bpmn:incoming>
+      <bpmn:outgoing>flow_to_notification</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:serviceTask id="send_welcome_email" name="Send Welcome Email">
+      <bpmn:incoming>flow_to_notification</bpmn:incoming>
+      <bpmn:outgoing>flow_to_end</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:endEvent id="registration_completed" name="Registration Completed">
+      <bpmn:incoming>flow_to_end</bpmn:incoming>
+    </bpmn:endEvent>
+
+    <bpmn:endEvent id="registration_failed" name="Registration Failed">
+      <bpmn:incoming>flow_invalid_data</bpmn:incoming>
+    </bpmn:endEvent>
+
+    <!-- Sequence Flows -->
+    <bpmn:sequenceFlow id="flow_to_fill_form" sourceRef="start_registration" targetRef="fill_registration_form" />
+    <bpmn:sequenceFlow id="flow_to_validate" sourceRef="fill_registration_form" targetRef="validate_user_data" />
+    <bpmn:sequenceFlow id="flow_to_check_validation" sourceRef="validate_user_data" targetRef="check_validation" />
+    <bpmn:sequenceFlow id="flow_valid_data" name="Valid" sourceRef="check_validation" targetRef="send_verification_email">
+      <bpmn:conditionExpression>${isValid == true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="flow_invalid_data" name="Invalid" sourceRef="check_validation" targetRef="registration_failed">
+      <bpmn:conditionExpression>${isValid == false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="flow_to_wait_verification" sourceRef="send_verification_email" targetRef="verify_email" />
+    <bpmn:sequenceFlow id="flow_to_create_account" sourceRef="verify_email" targetRef="create_user_account" />
+    <bpmn:sequenceFlow id="flow_to_notification" sourceRef="create_user_account" targetRef="send_welcome_email" />
+    <bpmn:sequenceFlow id="flow_to_end" sourceRef="send_welcome_email" targetRef="registration_completed" />
+  </bpmn:process>
+</bpmn:definitions>
