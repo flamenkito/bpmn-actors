@@ -1,0 +1,70 @@
+ mvn test                                                                                    14:19:41   1.342s
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ---------------------< com.flamenkito:bpmn-actors >---------------------
+[INFO] Building bpmn-actors 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- resources:3.3.1:resources (default-resources) @ bpmn-actors ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO]
+[INFO] --- scala:4.8.1:add-source (scala-compile-first) @ bpmn-actors ---
+[INFO] Add Source directory: /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/scala
+[INFO] Add Test Source directory: /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/test/scala
+[INFO]
+[INFO] --- scala:4.8.1:compile (scala-compile-first) @ bpmn-actors ---
+[INFO] compile in 0.0 s
+[INFO] No sources to compile
+[INFO]
+[INFO] --- compiler:3.13.0:compile (default-compile) @ bpmn-actors ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- kotlin:1.9.22:compile (compile) @ bpmn-actors ---
+[WARNING] Source root doesn't exist: /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/java
+[WARNING] Source root doesn't exist: /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/scala
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt: (24, 56) Unresolved reference: FlowNode
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt: (29, 24) Unresolved reference: StartEvent
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt: (29, 38) Unresolved reference: StartEvent
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt: (33, 24) Unresolved reference: EndEvent
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt: (33, 36) Unresolved reference: EndEvent
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt: (37, 39) Unresolved reference: Task
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt: (42, 36) Unresolved reference: Task
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt: (47, 38) Unresolved reference: Task
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt: (52, 38) Unresolved reference: Task
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt: (57, 44) Unresolved reference: Gateway
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt: (62, 43) Unresolved reference: Gateway
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt: (67, 44) Unresolved reference: Gateway
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt: (72, 45) Unresolved reference: Gateway
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt: (82, 60) Unresolved reference: SequenceFlow
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt: (86, 17) Unresolved reference: SequenceFlow
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.674 s
+[INFO] Finished at: 2025-05-22T14:19:46+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.jetbrains.kotlin:kotlin-maven-plugin:1.9.22:compile (compile) on project bpmn-actors: Compilation failure: Compilation failure:
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt:[24,56] Unresolved reference: FlowNode
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt:[29,24] Unresolved reference: StartEvent
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt:[29,38] Unresolved reference: StartEvent
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt:[33,24] Unresolved reference: EndEvent
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt:[33,36] Unresolved reference: EndEvent
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt:[37,39] Unresolved reference: Task
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt:[42,36] Unresolved reference: Task
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt:[47,38] Unresolved reference: Task
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt:[52,38] Unresolved reference: Task
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt:[57,44] Unresolved reference: Gateway
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt:[62,43] Unresolved reference: Gateway
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt:[67,44] Unresolved reference: Gateway
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt:[72,45] Unresolved reference: Gateway
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt:[82,60] Unresolved reference: SequenceFlow
+[ERROR] /Users/asutov/projects/bpmn-actors/kotlin-scala-mixed/src/main/kotlin/com/flamenkito/bpmn/BpmnParser.kt:[86,17] Unresolved reference: SequenceFlow
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
