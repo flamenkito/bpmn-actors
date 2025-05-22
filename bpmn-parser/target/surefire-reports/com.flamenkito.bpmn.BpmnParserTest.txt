@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+Test set: com.flamenkito.bpmn.BpmnParserTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.160 s <<< FAILURE! -- in com.flamenkito.bpmn.BpmnParserTest
+com.flamenkito.bpmn.BpmnParserTest.should parse user registration process correctly -- Time elapsed: 0.153 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected size: 8 but was: 10 in:
+[StartEvent(id=start_registration, name=Registration Started),
+    Task(id=fill_registration_form, name=Fill Registration Form, type=USER_TASK),
+    Task(id=validate_user_data, name=Validate User Data, type=SERVICE_TASK),
+    Gateway(id=check_validation, name=Is Data Valid?, type=EXCLUSIVE),
+    Task(id=send_verification_email, name=Send Verification Email, type=SERVICE_TASK),
+    Task(id=verify_email, name=Wait for Email Verification, type=USER_TASK),
+    Task(id=create_user_account, name=Create User Account, type=SERVICE_TASK),
+    Task(id=send_welcome_email, name=Send Welcome Email, type=SERVICE_TASK),
+    EndEvent(id=registration_completed, name=Registration Completed),
+    EndEvent(id=registration_failed, name=Registration Failed)]
+	at com.flamenkito.bpmn.BpmnParserTest.should parse user registration process correctly(BpmnParserTest.kt:39)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
